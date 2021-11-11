@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring boot index </title>
+</head>
+<body>
+	<table>
+    <thead>
+        <tr>
+            <th> Nombre </th>
+            <th> Primer apellido </th>
+            <th> Segundo apellido </th>
+            <th> DNI </th>
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${everisCustomers.empty}">
+            <td colspan="2"> No everisCustomers Available </td>
+        </tr>
+        <tr th:each="everisCustomer : ${everisCustomers}">
+            <td><span th:text="${everisCustomer.name}"> Nombre </span></td>
+            <td><span th:text="${everisCustomer.surName1}"> Primer apellido </span></td>
+            <td><span th:text="${everisCustomer.surName2}"> Segundo apellido </span></td>
+            <td><span th:text="${everisCustomer.identityDocNumber}"> DNI </span></td>
+
+            
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

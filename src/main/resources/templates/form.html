@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Client</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Create New Client</h1>
+        <br />
+        <form action="#" th:action="@{/save}" th:object="${everisCustomer}"
+            method="post">
+ 
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" th:field="*{name}" /></td>
+                </tr>
+                <tr>
+                    <td>Primer apellido</td>
+                    <td><input type="text" th:field="*{surName1}" /></td>
+                </tr>
+                <tr>
+                    <td>Segundo apellido</td>
+                    <td><input type="text" th:field="*{surName2}" /></td>
+                </tr>
+                <tr>
+                    <td>DNI</td>
+                    <td><input type="text" th:field="*{identityDocNumber}" /></td>
+                </tr>                            
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
